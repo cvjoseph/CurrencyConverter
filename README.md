@@ -5,7 +5,7 @@ This application can be used to convert from one current to many other currencie
 
 Screenshot
 ============
-![Alt text](http://github.com/cvjoseph/CurrencyConverter/blob/master/Screenshot1.jpg "Application Screenshot")
+![Application Screenshot](https://github.com/cvjoseph/CurrencyConverter/blob/master/Screenshot1.jpg "Application Screenshot")
 
 Features
 ============
