@@ -3,6 +3,21 @@ CurrencyConverter - Multi CurrencyConverter
 
 This application can be used to convert from one current to many other currencies simultanously
 
+Download
+============
+
+Download Application Distributable from
+
+**For 64 bit Windows computers**
+http://1drv.ms/1bqb0AU
+
+
+Install
+============
+Un-zip and launch Executable 
+- CurrencyConverter.exe
+
+
 Screenshot
 ============
 ![Application Screenshot](https://github.com/cvjoseph/CurrencyConverter/blob/master/Screenshot1.jpg "Application Screenshot")
@@ -23,7 +38,7 @@ Features
 
 Known Issues
 ============
-No Issues known 
+- Works only on 64 bit Windows computers
 
 
 ToDo
