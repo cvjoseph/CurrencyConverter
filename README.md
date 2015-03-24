@@ -29,4 +29,18 @@ No Issues known
 ToDo
 ============
 
+Short Term
+------------
+- Display Currency Name next to Currency Code
+- Dropdown to select Currency Code
+- Search for a Currency
+
+Mid Term
+------------
+- Add more Currency Code's for conversion
+- Remove Currency Code's for conversion
+
+Long Term
+------------
+- Change Application Icon to Primary Currency Code's Currency Icon
 
