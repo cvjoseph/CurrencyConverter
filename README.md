@@ -3,8 +3,12 @@ CurrencyConverter - Multi CurrencyConverter
 
 This application can be used to convert from one current to many other currencies simultanously
 
+Screenshot
+============
+![Alt text](http://github.com/cvjoseph/CurrencyConverter/blob/master/Screenshot1.jpg "Application Screenshot")
+
 Features
---------
+============
 - Set any currency as Primary currency
 - Define your set of frequently used currencies 
 - Offline conversion supported
@@ -12,11 +16,17 @@ Features
 - Saves rates for offline use in SqlLite Database
 - Saves your list of currencies and current primary currency in local database
 - Supports multiplier 
+- Validates Numbers
+- Validates currency codes entered
+
+
+
+Known Issues
+============
 
 
 
 ToDo
---------
-
+============
 
 
