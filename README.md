@@ -85,7 +85,10 @@ Long Term
 Change log
 ============
 
-**24th March 2014**
+**Version 1.1 - 26th March 2014**
+- Updated Application with minor changes
+
+**Version 1.0 - 24th March 2014**
 - Created Repository and Added Initial code
 
 

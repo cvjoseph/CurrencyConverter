@@ -568,5 +568,14 @@ namespace CurrencyConverter
         {
             e = validate_number(multiplier, e);
         }
+
+        private void About_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show("Developed by Joseph Verghese \r\n Visit");
+            About form = new About();
+            form.Top = this.Top;
+            form.Left = this.Left;
+            form.ShowDialog();
+        }
     }
 }
