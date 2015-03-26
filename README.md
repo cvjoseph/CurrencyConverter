@@ -87,7 +87,10 @@ Long Term
 Change log
 ============
 
+https://github.com/cvjoseph/CurrencyConverter/releases
+
 **Version 1.1 - 26th March 2014**
+- https://github.com/cvjoseph/CurrencyConverter/releases/tag/Version_1.1
 - Updated Application with minor changes
 
 **Version 1.0 - 24th March 2014**
