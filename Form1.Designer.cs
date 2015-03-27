@@ -60,7 +60,6 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.About = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonDo
@@ -291,9 +290,9 @@
             // 
             this.lastRefresh.Location = new System.Drawing.Point(14, 324);
             this.lastRefresh.Name = "lastRefresh";
-            this.lastRefresh.Size = new System.Drawing.Size(168, 20);
+            this.lastRefresh.Size = new System.Drawing.Size(197, 20);
             this.lastRefresh.TabIndex = 25;
-            this.lastRefresh.Text = "Last Refresh : ";
+            this.lastRefresh.Text = "Updated : ";
             this.lastRefresh.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.lastRefresh.Click += new System.EventHandler(this.lastRefresh_Click);
             // 
@@ -338,22 +337,13 @@
             // 
             // About
             // 
-            this.About.Location = new System.Drawing.Point(229, 355);
+            this.About.Location = new System.Drawing.Point(230, 347);
             this.About.Name = "About";
-            this.About.Size = new System.Drawing.Size(50, 23);
+            this.About.Size = new System.Drawing.Size(49, 31);
             this.About.TabIndex = 29;
-            this.About.Text = "About";
+            this.About.Text = "... v1.2";
             this.About.UseVisualStyleBackColor = true;
             this.About.Click += new System.EventHandler(this.About_Click);
-            // 
-            // label3
-            // 
-            this.label3.Location = new System.Drawing.Point(210, 335);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 21);
-            this.label3.TabIndex = 30;
-            this.label3.Text = "Version 1.1";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
             // Form1
             // 
@@ -361,7 +351,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(294, 390);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.About);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label2);
@@ -435,7 +424,6 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.Button About;
-        private System.Windows.Forms.Label label3;
     }
 }
 
