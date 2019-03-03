@@ -11,9 +11,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using System.Data.SQLite;
+using System.Net;
+using System.Web.Script.Serialization;
 
 namespace CurrencyConverter
 {
+
+
     public partial class Form1 : Form
     {
         public Form1()
@@ -62,22 +66,37 @@ namespace CurrencyConverter
 
             //Grab your values and build your Web Request to the API
             string apiURL = String.Format("https://www.google.com/finance/converter?a={0}&from={1}&to={2}&meta={3}", amount, fromCurrency, toCurrency, Guid.NewGuid().ToString());
+            //string apiURL = String.Format("https://www.google.com/finance/converter?a={0}&from={1}&to={2}&meta={3}", amount, fromCurrency, toCurrency, Guid.NewGuid().ToString());
+
+            string apiURL = String.Format("https://rate-exchange-1.appspot.com/currency?from={0}&to={1}", fromCurrency, toCurrency);
 
             //Make your Web Request and grab the results
-            var request = System.Net.WebRequest.Create(apiURL);
+            //var request = System.Net.WebRequest.Create(apiURL);
+            WebClient client = new WebClient();
+
+ 
 
             //Get the Response
-            var streamReader = new System.IO.StreamReader(request.GetResponse().GetResponseStream(), System.Text.Encoding.ASCII);
+            //var streamReader = new System.IO.StreamReader(request.GetResponse().GetResponseStream(), System.Text.Encoding.ASCII);
+
+            string rates = client.DownloadString(apiURL);
+            Rate rate = new JavaScriptSerializer().Deserialize<Rate>(rates);
+
+            double amt = (double)amount;
+
+            double converted_amount = amt * rate.rate;
 
             //Grab your converted value (ie 2.45 USD)
-            var result = Regex.Matches(streamReader.ReadToEnd(), "<span class=\"?bld\"?>([^<]+)</span>")[0].Groups[1].Value;
+            //var result = Regex.Matches(streamReader.ReadToEnd(), "<span class=\"?bld\"?>([^<]+)</span>")[0].Groups[1].Value;
 
-            result = result.Replace(toCurrency, "");
-            result = result.Trim();
+            //result = result.Replace(toCurrency, "");
+            //result = result.Trim();
 
-            Decimal d = decimal.Parse(result);
-            d= Math.Round(d,5);
-            result = d.ToString();
+            //Decimal d = decimal.Parse(result);
+            //d= Math.Round(d,5);
+
+            decimal d = Math.Round((decimal)converted_amount, 5);
+            string result = d.ToString();
 
             //save_rate(fromCurrency, toCurrency, d);
             
@@ -158,29 +177,41 @@ namespace CurrencyConverter
         private static void save_setting(String code, String value)
         {
             String s = "select count(*) from settings where code = '" + code + "'";
+            try
+            {
 
-            DataTable DT = sql_run_select(s);
-            if (int.Parse(DT.Rows[0].ItemArray[0].ToString()) == 0)
-            {
-                s = "insert into settings (code, value)  values('" + code + "', '" + value + "')";
-                String success = sql_run_update(s);
+                DataTable DT = sql_run_select(s);
+                if (int.Parse(DT.Rows[0].ItemArray[0].ToString()) == 0)
+                {
+                    s = "insert into settings (code, value)  values('" + code + "', '" + value + "')";
+                    String success = sql_run_update(s);
+                }
+                else
+                {
+                    s = "update settings set value = '" + value + "' where code = '" + code + "'";
+                    String success = sql_run_update(s);
+                }
             }
-            else
-            {
-                s = "update settings set value = '" + value + "' where code = '" + code + "'";
-                String success = sql_run_update(s);
-            }
+            catch(Exception e)
+            { }
 
         }
         private static String get_setting(String code)
         {
             String s = "select value from settings where code = '" + code + "'";
-            DataTable DT = sql_run_select(s);
-            if (DT.Rows.Count > 0)
+            try
             {
-                return DT.Rows[0].ItemArray[0].ToString();
+                DataTable DT = sql_run_select(s);
+                if (DT.Rows.Count > 0)
+                {
+                    return DT.Rows[0].ItemArray[0].ToString();
+                }
+                else
+                {
+                    return "";
+                }
             }
-            else
+            catch(Exception e)
             {
                 return "";
             }
@@ -230,12 +261,19 @@ namespace CurrencyConverter
         private static String get_currency(int pos)
         {
             String s = "select code from currencies where position = " + pos;
-            DataTable DT = sql_run_select(s);
-            if (DT.Rows.Count > 0)
+            try
             {
-                return DT.Rows[0].ItemArray[0].ToString();
+                DataTable DT = sql_run_select(s);
+                if (DT.Rows.Count > 0)
+                {
+                    return DT.Rows[0].ItemArray[0].ToString();
+                }
+                else
+                {
+                    return "";
+                }
             }
-            else
+            catch(Exception e)
             {
                 return "";
             }
