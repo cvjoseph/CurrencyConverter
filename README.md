@@ -89,7 +89,7 @@ Change log
 
 https://github.com/cvjoseph/CurrencyConverter/releases
 
-**Version 1.1 - 26th March 2014**
+**Version 1.1 - 15th March 2019**
 - https://github.com/cvjoseph/CurrencyConverter/releases/tag/Version_1.2
 - Updated Exchange Rate source
 
