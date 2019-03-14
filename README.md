@@ -11,7 +11,7 @@ Download Application Distributable from
 **For 64 bit Windows computers Only**
 
 Portable Zip Download 
-https://github.com/cvjoseph/CurrencyConverter/releases/download/Version_1.2/Currency.Converter_Version_1.2.zip
+https://github.com/cvjoseph/CurrencyConverter/releases/download/Version_1.2/CurrencyConverter_1.2.zip
 
 
 Install
