@@ -11,7 +11,7 @@ Download Application Distributable from
 **For 64 bit Windows computers Only**
 
 Portable Zip Download 
-https://github.com/cvjoseph/CurrencyConverter/releases/download/Version_1.1/Currency.Converter_Version_1.1.zip
+https://github.com/cvjoseph/CurrencyConverter/releases/download/Version_1.2/CurrencyConverter_1.2.zip
 
 
 Install
@@ -88,6 +88,10 @@ Change log
 ============
 
 https://github.com/cvjoseph/CurrencyConverter/releases
+
+**Version 1.1 - 15th March 2019**
+- https://github.com/cvjoseph/CurrencyConverter/releases/tag/Version_1.2
+- Updated Exchange Rate source
 
 **Version 1.1 - 26th March 2014**
 - https://github.com/cvjoseph/CurrencyConverter/releases/tag/Version_1.1
